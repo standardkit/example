@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RoutingModule } from './routing/routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@standardkit/angular-components';
 
@@ -11,7 +11,7 @@ import { FormsModule } from '@standardkit/angular-components';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RoutingModule,
     FormsModule
   ],
   providers: [],
