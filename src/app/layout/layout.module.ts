@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CardLayoutComponent } from './card-layout/card-layout.component';
@@ -12,6 +13,7 @@ const LAYOUTS = [
 
 @NgModule({
   imports: [
+    CommonModule,
     RouterModule
   ],
   declarations: LAYOUTS,

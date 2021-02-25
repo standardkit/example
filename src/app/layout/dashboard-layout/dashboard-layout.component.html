@@ -1,2 +1,34 @@
-<h1>Dashboard layout</h1>
-<router-outlet></router-outlet>
+<sk-dashboard-page>
+
+  <sk-brand>
+    <sk-logo
+      src="/assets/standardkit-icon.png"
+      alt="StandardKit Icon"
+      route="/"
+      [isClickable]="true">
+    </sk-logo>
+    <sk-title>StandardKit</sk-title>
+  </sk-brand>
+
+  <sk-navigation>
+    <sk-navigation-item
+      *ngFor="let page in pages"
+      [title]="page.title"
+      [route]="page.route">
+      <sk-navigation-item-icon><i class="fa fa-{{ page.icon }}"></i></sk-navigation-item-icon>
+      <sk-navigation-item-title></sk-navigation-item-title>
+      <ng-container *ngIf="page.children">
+        <sk-navigation-subitem
+          *ngFor="let child in page.children"
+          [route]="child.route"
+          [title]="child.title">
+        </sk-navigation-subitem>
+      </ng-container>
+    </sk-navigation-item>
+  </sk-navigation>
+
+  <sk-dashboard-page-content>
+    <router-outlet></router-outlet>
+  </sk-dashboard-page-content>
+
+</sk-dashboard-page>
